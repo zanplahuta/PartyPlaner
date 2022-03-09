@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Party Planer</string>
+    <string name="detailed_view_title">Detailed view</string>
+    <string name="party_name">Name</string>
+    <string name="party_location">Location</string>
+    <string name="party_datetime">Date and time</string>
+    <string name="party_type">Type</string>
+    <string name="party_description">Description</string>
+    <string name="party_likes">Likes</string>
 </resources>
