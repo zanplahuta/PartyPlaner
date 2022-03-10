@@ -2,6 +2,8 @@ package com.example.partyplaner;
 
 import android.media.Image;
 
+import androidx.annotation.NonNull;
+
 import java.util.Date;
 import java.util.UUID;
 
@@ -14,6 +16,16 @@ public class Party {
     private String description;
     private int likes;
     private String uuid;
+
+    public Party(String name, String location, Date datetime, Image image, String type, String description, int likes) {
+        this.name = name;
+        this.location = location;
+        this.datetime = datetime;
+        this.image = image;
+        this.type = type;
+        this.description = description;
+        this.likes = likes;
+    }
 
     public Party() {
         uuid = UUID.randomUUID().toString().replace("-","");
@@ -81,5 +93,11 @@ public class Party {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
