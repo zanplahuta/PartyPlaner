@@ -15,7 +15,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sign_in(View view) {
-        Intent i = new Intent(getBaseContext(), Sign_in.class);
+        Intent i = new Intent(getBaseContext(), SignIn.class);
+        startActivity(i);
+    }
+    public void onClickOpenCreate(View view) {
+        Intent i = new Intent(getBaseContext(), CreatePartyActivity.class);
         startActivity(i);
     }
 }

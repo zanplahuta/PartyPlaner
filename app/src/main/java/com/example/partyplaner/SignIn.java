@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -16,7 +15,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
-public class Sign_in extends AppCompatActivity {
+public class SignIn extends AppCompatActivity {
     SignInButton signin;
     int RC_SIGN_IN = 0;
 
@@ -71,7 +70,7 @@ public class Sign_in extends AppCompatActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
-            Intent intent = new Intent(Sign_in.this, MainActivity.class);
+            Intent intent = new Intent(SignIn.this, MainActivity.class);
             startActivity(intent);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
@@ -80,9 +79,9 @@ public class Sign_in extends AppCompatActivity {
         }
     }
 
-    public void onClickOpenCreate(View view) {
-        Intent i = new Intent(getBaseContext(), CreatePartyActivity.class);
+
+    public void sign_up_btn(View view) {
+        Intent i = new Intent(getBaseContext(), SignUp.class);
         startActivity(i);
     }
-
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/partyimage"
-    tools:context=".Sign_in">
+    tools:context=".SignIn">
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
@@ -20,7 +20,7 @@
         android:id="@+id/heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:text="Let's party!"
         android:textColor="@color/white"
         android:textSize="36sp"
@@ -28,14 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonOpenCreate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickOpenCreate"
-        android:text="Open"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <TextView
         android:id="@+id/subtitle"
@@ -106,6 +99,7 @@
         android:layout_marginTop="10dp"
         android:background="#00FFFFFF"
         android:text="Don't have an account yet? Sign up here"
+        android:onClick="sign_up_btn"
         android:textAllCaps="false"
         android:textColor="#FBBC05"
         app:layout_constraintEnd_toEndOf="parent"
