@@ -77,4 +77,9 @@ public class Sign_in extends AppCompatActivity {
         }
     }
 
+    public void onClickOpenCreate(View view) {
+        Intent i = new Intent(getBaseContext(), CreatePartyActivity.class);
+        startActivity(i);
+    }
+
 }
