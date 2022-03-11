@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".SignUp"></activity>
+        <activity
+            android:name=".InvitationActivity"
+            android:exported="false" />
+        <activity android:name=".SignUp" />
         <activity
             android:name=".CreatePartyActivity"
             android:exported="true" />
