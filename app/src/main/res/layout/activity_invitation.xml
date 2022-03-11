@@ -13,19 +13,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:background="@color/white"
+        android:onClick="onButtonInviteClick"
         android:text="INVITE"
         android:textColor="#F37783"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailInvite" />
 
     <Button
-        android:id="@+id/buttonBack"
+        android:id="@+id/buttonContinue"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:text="BACK"
+        android:onClick="onButtonContinueClick"
+        android:text="Continue"
         android:textColor="#F37783"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,14 +45,14 @@
         android:text="Invite friends"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName4"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNameInvite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/editTextNameInvite"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:ems="10"
@@ -62,7 +64,7 @@
         tools:layout_editor_absoluteY="261dp" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress3"
+        android:id="@+id/editTextEmailInvite"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -72,6 +74,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNameInvite" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
