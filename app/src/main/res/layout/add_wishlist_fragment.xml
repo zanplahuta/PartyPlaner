@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddWishlistFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="369dp"
+            android:layout_height="295dp"
+            android:background="#FFFFFF"
+            android:src="@drawable/rectangleaddwish"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:layout_width="312dp"
+            android:layout_height="253dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="220dp"
+                android:layout_height="51dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="84dp"
+                android:fontFamily="@font/sora_extrabold"
+                android:text="Add To Wishlist"
+                android:textColor="#000000"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/editTextTextMultiLine"
+                android:layout_width="293dp"
+                android:layout_height="113dp"
+                android:layout_below="@+id/textView4"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:background="#F3F3F3"
+                android:ems="10"
+                android:fontFamily="@font/sora_extrabold"
+                android:gravity="start|top"
+                android:hint="Write down what you need..."
+                android:inputType="textMultiLine"
+                android:textColor="#000000"
+                android:textColorHint="@color/black" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="180dp"
+                android:layout_marginBottom="20dp"
+                android:background="#FFFFFF"
+                android:src="@drawable/discardbutton" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="#FFFFFF"
+                android:src="@drawable/postbutton" />
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

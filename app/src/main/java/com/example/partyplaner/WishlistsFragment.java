@@ -59,6 +59,10 @@ public class WishlistsFragment extends Fragment {
         initAdapter();
     }
 
+    public void onClickAddWish(View view) {
+        //TODO: On click show add wish fragment
+    }
+
     private void initAdapter() {
         adapter = new AdapterWishlist(new AdapterWishlist.OnItemClickListener() {
             @Override
