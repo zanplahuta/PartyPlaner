@@ -90,7 +90,8 @@
             app:layout_constraintEnd_toStartOf="@+id/textViewTypeDetailed"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ellipse" />
 
         <ImageView
             android:id="@+id/imageView3"
@@ -101,7 +102,8 @@
             app:layout_constraintEnd_toStartOf="@+id/textViewLocationDetailed"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:srcCompat="@drawable/ellipse" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -112,6 +114,7 @@
             app:layout_constraintEnd_toStartOf="@+id/textViewDateDetailed"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            tools:srcCompat="@drawable/ellipse" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
