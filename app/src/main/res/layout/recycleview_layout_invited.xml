@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#FFFFFF">
 
     <ImageView
@@ -49,6 +49,10 @@
             android:layout_marginTop="13dp"
             android:layout_marginBottom="13dp"
             android:layout_toEndOf="@+id/imageView6"
-            android:text="TextView" />
+            android:fontFamily="@font/sora_extrabold"
+            android:text="Name"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:typeface="normal" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
