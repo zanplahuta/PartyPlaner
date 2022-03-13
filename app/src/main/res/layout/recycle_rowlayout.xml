@@ -9,14 +9,17 @@
 
     <ImageView
         android:id="@+id/rowicon"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="165dp"
         android:layout_margin="10dp"
+        android:adjustViewBounds="true"
         android:contentDescription="TODO"
+        android:scaleType="fitXY"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/partyimagebackground" />
 
     <TextView
         android:id="@+id/partyName"
@@ -32,21 +35,24 @@
         android:id="@+id/buttonRequest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:background="#8EE4AF"
         android:text="Request"
-        app:layout_constraintEnd_toStartOf="@+id/buttonLike"
+        android:textColor="#455A64"
+        app:layout_constraintStart_toEndOf="@+id/partyName"
         app:layout_constraintTop_toBottomOf="@+id/rowicon" />
 
-    <Button
-        android:id="@+id/buttonLike"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imageViewHeart"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
-        android:text="Like"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rowicon" />
+        app:layout_constraintStart_toEndOf="@+id/buttonRequest"
+        app:layout_constraintTop_toBottomOf="@+id/rowicon"
+        app:srcCompat="@drawable/emptyheart" />
 
     <TextView
         android:id="@+id/partyLocation"

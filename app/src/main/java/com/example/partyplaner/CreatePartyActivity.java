@@ -37,7 +37,7 @@ public class CreatePartyActivity extends AppCompatActivity {
     protected Parties parties;
     SharedPreferences sharedPreferences;
 
-    Button buttonDiscard, buttonCreate, buttonChooseFile;
+    Button buttonDiscard, buttonCreate, buttonChooseFile, buttonProfileLink;
     EditText etTitle, etDescription, etDate;
     TextView textViewURI;
     ImageView imageView;
@@ -50,6 +50,7 @@ public class CreatePartyActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         buttonDiscard = findViewById(R.id.buttonDiscard);
         buttonCreate = findViewById(R.id.buttonCreate);
+        buttonProfileLink = findViewById(R.id.buttonProfileLink);
         buttonChooseFile = findViewById(R.id.buttonChooseFile);
         etTitle = findViewById(R.id.etTitle);
         etDescription = findViewById(R.id.etDescription);
