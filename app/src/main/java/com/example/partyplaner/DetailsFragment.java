@@ -49,8 +49,9 @@ public class DetailsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        //String partyUUID = getArguments().getString("partyUUID");
         View rootView = inflater.inflate(R.layout.details_fragment, container, false);
-        textViewNameDetailed = (TextView) rootView.findViewById(R.id.textViewNameDetailed);
+        //textViewNameDetailed = (TextView) rootView.findViewById(R.id.textViewNameDetailed);
         textViewTypeDetailed = (TextView) rootView.findViewById(R.id.textViewTypeDetailed);
         textViewLocationDetailed = (TextView) rootView.findViewById(R.id.textViewLocationDetailed);
         textViewDateDetailed = (TextView) rootView.findViewById(R.id.textViewDateDetailed);
@@ -63,30 +64,23 @@ public class DetailsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(DetailsViewModel.class);
         //app = (MyApplication) getApplication();
-        partyUUID = getActivity().getIntent().getStringExtra("PartyUUID");
-        getParty(new VolleyCallbackSession() {
-            @Override
-            public void onSuccessResponse(Party party) {
-                setData(party);
-                //drawPath(session.getLatitude(), session.getLongtitude());
-                //Log.i("asd",session.getLatitude() + " " + session.getLongtitude());
-            }
-        });
+        partyUUID = getActivity().getIntent().getStringExtra("partyUUID");
+        Party party = new Party("Return to Maribor", "Gosposvetska cesta 11", "15.03.2022 20:00", "Private", "Best afterparty in town. BYOB.");
+        setData(party);
     }
 
     public void setData(Party party) {
-        textViewNameDetailed.setText(party.getName());
+        //textViewNameDetailed.setText(party.getName());
         textViewTypeDetailed.setText(party.getType());
         textViewLocationDetailed.setText(party.getLocation());
-        textViewDateDetailed.setText(party.getDatetime().toString());
+        textViewDateDetailed.setText(party.getDatetime());
         textViewDescriptionDetailed.setText(party.getDescription());
     }
 
-    public void getParty(final VolleyCallbackSession callback) {
-        Party party = new Party();
+    public void getParty() {
         //SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(app.getApplicationContext());
         //String jwt = sp.getString("jwt", null);
-        RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        /*RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, "ip goes here" + "/activities/" + partyUUID,
                 new Response.Listener<String>() {
                     @Override
@@ -126,7 +120,7 @@ public class DetailsFragment extends Fragment {
                 return params;
             }
         };
-        queue.add(stringRequest);
+        queue.add(stringRequest);*/
     }
 
 }

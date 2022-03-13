@@ -15,36 +15,36 @@
             android:id="@+id/textViewTypeDetailed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="11dp"
-            android:layout_marginEnd="272dp"
             android:fontFamily="@font/sora_extrabold"
             android:text="TextView"
             android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewLocationDetailed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="11dp"
-            android:layout_marginEnd="272dp"
             android:fontFamily="@font/sora_extrabold"
             android:text="TextView"
             android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/textViewTypeDetailed" />
 
         <TextView
             android:id="@+id/textViewDateDetailed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="11dp"
-            android:layout_marginEnd="272dp"
             android:fontFamily="@font/sora_extrabold"
             android:text="TextView"
             android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/textViewLocationDetailed" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -87,9 +87,7 @@
             android:layout_height="10dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/ellipse"
-            app:layout_constraintEnd_toStartOf="@+id/textViewTypeDetailed"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ellipse" />
 
@@ -97,11 +95,9 @@
             android:id="@+id/imageView3"
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="21dp"
             android:src="@drawable/ellipse"
-            app:layout_constraintEnd_toStartOf="@+id/textViewLocationDetailed"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:srcCompat="@drawable/ellipse" />
 
@@ -109,11 +105,9 @@
             android:id="@+id/imageView4"
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="21dp"
             android:src="@drawable/ellipse"
-            app:layout_constraintEnd_toStartOf="@+id/textViewDateDetailed"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/imageView3"
             tools:srcCompat="@drawable/ellipse" />
     </androidx.constraintlayout.widget.ConstraintLayout>

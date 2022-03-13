@@ -22,4 +22,10 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(getBaseContext(), CreatePartyActivity.class);
         startActivity(i);
     }
+
+    public void onClickOpenDetailedView(View view) {
+        Intent i = new Intent(getBaseContext(), DetailedViewActivity.class);
+        //i.putExtra("partyUUID", "100");
+        startActivity(i);
+    }
 }

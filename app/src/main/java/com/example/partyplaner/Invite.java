@@ -3,7 +3,15 @@ package com.example.partyplaner;
 public class Invite {
     private String name;
     private String email;
+    private String response;
     private String partyUUID;
+
+    public Invite(String name, String email, String response, String partyUUID) {
+        this.name = name;
+        this.email = email;
+        this.response = response;
+        this.partyUUID = partyUUID;
+    }
 
     public String getName() {
         return name;
@@ -27,6 +35,14 @@ public class Invite {
 
     public void setPartyUUID(String partyUUID) {
         this.partyUUID = partyUUID;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
     }
 }
 

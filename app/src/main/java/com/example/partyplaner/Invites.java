@@ -16,4 +16,7 @@ public class Invites {
     public void setInvites(ArrayList<Invite> invites) {
         this.invites = invites;
     }
+    public void addInvite(Invite e) {
+        invites.add(e);
+    }
 }

@@ -10,21 +10,21 @@ import java.util.UUID;
 public class Party {
     private String name;
     private String location;
-    private Date datetime;
+    private String datetime;
     private Image image;
     private String type;
     private String description;
     private int likes;
     private String uuid;
 
-    public Party(String name, String location, Date datetime, Image image, String type, String description, int likes) {
+    public Party(String name, String location, String datetime, String type, String description) {
         this.name = name;
         this.location = location;
         this.datetime = datetime;
-        this.image = image;
+        //this.image = image;
         this.type = type;
         this.description = description;
-        this.likes = likes;
+        //this.likes = likes;
     }
 
     public Party() {
@@ -47,11 +47,11 @@ public class Party {
         this.location = location;
     }
 
-    public Date getDatetime() {
+    public String getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(Date datetime) {
+    public void setDatetime(String datetime) {
         this.datetime = datetime;
     }
 

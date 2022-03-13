@@ -8,11 +8,13 @@
     <fragment
         android:id="@+id/navigation_details"
         android:name="com.example.partyplaner.DetailsFragment"
+        android:label="Details"
         tools:layout="@layout/details_fragment" />
 
     <fragment
         android:id="@+id/navigation_invites"
         android:name="com.example.partyplaner.InvitesFragment"
+        android:label="Invites"
         tools:layout="@layout/invites_fragment" />
 
     <fragment
