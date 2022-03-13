@@ -37,7 +37,7 @@ public class CreatePartyActivity extends AppCompatActivity {
     protected Parties parties;
     SharedPreferences sharedPreferences;
 
-    Button buttonDiscard, buttonCreate, buttonChooseFile, buttonProfileLink;
+    Button buttonDiscard, buttonCreate, buttonChooseFile, buttonProfileLink, buttonShare, buttonLikeTemporary;
     EditText etTitle, etDescription, etDate;
     TextView textViewURI;
     ImageView imageView;
@@ -51,6 +51,8 @@ public class CreatePartyActivity extends AppCompatActivity {
         buttonDiscard = findViewById(R.id.buttonDiscard);
         buttonCreate = findViewById(R.id.buttonCreate);
         buttonProfileLink = findViewById(R.id.buttonProfileLink);
+        buttonShare = findViewById(R.id.buttonShare);
+        buttonLikeTemporary = findViewById(R.id.buttonLikeTemporary);
         buttonChooseFile = findViewById(R.id.buttonChooseFile);
         etTitle = findViewById(R.id.etTitle);
         etDescription = findViewById(R.id.etDescription);
@@ -66,6 +68,21 @@ public class CreatePartyActivity extends AppCompatActivity {
                 startActivityForResult(intent, IMAGE_SELECT_CODE);
             }
         });
+
+        buttonShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_SEND);
+
+                //change the type of data you need to share,
+                //for image use "image/*"
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, "Crazy party this weekend!");
+                startActivity(Intent.createChooser(intent, "Share"));
+            }
+        });
+
     }
 
     @Override
@@ -77,6 +94,12 @@ public class CreatePartyActivity extends AppCompatActivity {
                 imageView.setImageURI(uri);
                 textViewURI.setText((String)imageView.getTag());
             }
+        }
+    }
+
+    public void onClickBackground(View v) {
+        if(v == buttonLikeTemporary) {
+            buttonLikeTemporary.setBackgroundResource(R.drawable.heart);
         }
     }
 

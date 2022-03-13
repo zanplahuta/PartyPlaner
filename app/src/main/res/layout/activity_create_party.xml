@@ -7,6 +7,18 @@
     android:background="@color/white"
     tools:context=".CreatePartyActivity">
 
+    <Button
+        android:id="@+id/buttonLikeTemporary"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/emptyheart"
+        android:onClick="onClickBackground"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"
@@ -304,6 +316,17 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonShare"
+        android:layout_width="24dp"
+        android:layout_height="31dp"
+        android:background="@drawable/shareimage"
+        android:backgroundTint="#8EE4AF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
