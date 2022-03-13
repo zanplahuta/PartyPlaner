@@ -7,28 +7,111 @@
     android:background="#FFFFFF"
     tools:context=".WishlistsFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewWishlist"
-        android:layout_width="match_parent"
-        android:layout_height="449dp"
-        android:background="#FFFFFF" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="371dp"
+            android:layout_height="159dp"
+            android:background="#FFFFFF"
+            android:src="@drawable/rectanglewishlist"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rectanglewishlist" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="344dp"
+            android:layout_height="137dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+            app:layout_constraintEnd_toEndOf="@+id/imageView12"
+            app:layout_constraintStart_toStartOf="@+id/imageView12"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textViewWishRV"
+                android:layout_width="181dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="143dp"
+                android:fontFamily="@font/sora_extrabold"
+                android:text="Sandwiches"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:typeface="normal" />
+
+            <TextView
+                android:id="@+id/textViewNameWishRV"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewWishRV"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="218dp"
+                android:text="Johhny Bravo"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/textViewNameWishRV"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="269dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="15dp"
+                app:srcCompat="@drawable/doubletick" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/textViewNameWishRV"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/up" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/textViewNameWishRV"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="71dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/down" />
+        </RelativeLayout>
+
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/imageButtonPlusWish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:src="@drawable/addwish"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.864"
+            app:layout_constraintHorizontal_bias="0.948"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.76" />
+            app:layout_constraintVertical_bias="0.974" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

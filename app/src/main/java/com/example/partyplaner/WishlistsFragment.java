@@ -1,5 +1,6 @@
 package com.example.partyplaner;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -7,10 +8,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,6 +41,7 @@ public class WishlistsFragment extends Fragment {
     private WishlistsViewModel mViewModel;
     private RecyclerView recyclerView;
     private AdapterWishlist adapter;
+    private ImageButton imageButton;
     private Wishes wishes = new Wishes();
 
     public WishlistsFragment newInstance() {
@@ -47,16 +51,23 @@ public class WishlistsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.wishlists_fragment, container, false);
+        final FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        View view = inflater.inflate(R.layout.wishlists_fragment, container, false);
+        imageButton = view.findViewById(R.id.imageButtonPlusWish);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragmentManager.beginTransaction().replace(R.id.nav_host_fragment_activity_main, new AddWishlistFragment()).commit();
+            }
+        });
+        return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(WishlistsViewModel.class);
-        recyclerView = getView().findViewById(R.id.recyclerViewWishlist);
-        getWishes();
-        initAdapter();
+        //recyclerView = getView().findViewById(R.id.recyclerViewWishlist);
     }
 
     public void onClickAddWish(View view) {
@@ -80,60 +91,11 @@ public class WishlistsFragment extends Fragment {
                 adapter.notifyDataSetChanged();*/
             }
         }, wishes, this.getContext());
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        //recyclerView.setAdapter(adapter);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
     }
 
     public void getWishes() {
-        Wishes wishes = new Wishes();
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this.getContext());
-        String userID = sp.getString("userId", null);
-        String jwt = sp.getString("jwt", null);
-        RequestQueue queue = Volley.newRequestQueue(this.getContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "IP GOES HERE"+"/activities/user/"+userID,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(response);
-                            for(int i = 0; i < jsonArray.length(); i++) {
-                                Wish wish = new Wish();
-                                JSONObject obj = jsonArray.getJSONObject(i);
-                                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-                                long miliseconds = 0;
-                                try {
-                                    Date date = format.parse(obj.getString("start_time"));
-                                    miliseconds = date.getTime();
-                                }
-                                catch (ParseException ex) {
-                                    ex.printStackTrace();
-                                }
-                                wish.setWish(obj.getString("wish"));
-                                wish.setName(obj.getString("name"));
-                                //invite.setPartyUUID(obj.getString("partyUUID"));
-                                adapter.notifyDataSetChanged();
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Log.i("asda",e.getMessage());
-                        }
-
-                        //adapter.notifyDataSetChanged();
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.i("asd", error.toString());
-            }
-        }) {
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("x-auth-token", jwt);
-                return params;
-            }
-        };
-        queue.add(stringRequest);
     }
 
 }
