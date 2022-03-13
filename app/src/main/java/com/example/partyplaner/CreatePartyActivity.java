@@ -16,6 +16,7 @@ import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,9 @@ import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class CreatePartyActivity extends AppCompatActivity {
@@ -41,6 +45,11 @@ public class CreatePartyActivity extends AppCompatActivity {
     EditText etTitle, etDescription, etDate;
     TextView textViewURI;
     ImageView imageView;
+    Date date1;
+    String stringTitle, stringDescription, stringDate, shareMessage;
+
+    Party party1 = new Party();
+    Parties partiesList = new Parties();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,11 +84,50 @@ public class CreatePartyActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_SEND);
 
+                shareMessage = etTitle.getText().toString() + "\n\n" + etDate.getText().toString() + '\n' + etDescription.getText().toString() + '\n';
                 //change the type of data you need to share,
                 //for image use "image/*"
                 intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_TEXT, "Crazy party this weekend!");
+                intent.putExtra(Intent.EXTRA_TEXT, shareMessage);
                 startActivity(Intent.createChooser(intent, "Share"));
+            }
+        });
+
+        buttonDiscard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etTitle.setText("");
+                etDate.setText("");
+                etDescription.setText("");
+            }
+        });
+
+        buttonCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stringTitle = etTitle.getText().toString();
+                stringDate = etDate.getText().toString();
+                stringDescription = etDescription.getText().toString();
+
+                try {
+                    date1=new SimpleDateFormat("dd/MM/yyyy").parse(stringDate);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                party1.setName(etTitle.getText().toString());
+                party1.setLocation("Tyrseca ulica 30, Maribor");
+                party1.setDatetime(date1);
+                party1.setType("private");
+                party1.setDescription(etDescription.getText().toString());
+                party1.setLikes(20);
+
+                partiesList.addParty(party1);
+
+                etTitle.setText("");
+                etDate.setText("");
+                etDescription.setText("");
+                //Toast.makeText(getApplicationContext(), date1.toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -97,10 +145,17 @@ public class CreatePartyActivity extends AppCompatActivity {
         }
     }
 
+
+
     public void onClickBackground(View v) {
         if(v == buttonLikeTemporary) {
             buttonLikeTemporary.setBackgroundResource(R.drawable.heart);
         }
+    }
+
+    public void onClickOpenList(View view) {
+        Intent i = new Intent(getBaseContext(), PartyListGuestActivity.class);
+        startActivity(i);
     }
 
 }

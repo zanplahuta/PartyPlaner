@@ -14,6 +14,9 @@
         <activity
             android:name=".InvitationActivity"
             android:exported="false" />
+        <activity
+            android:name=".PartyListGuestActivity"
+            android:exported="false" />
         <activity android:name=".SignUp" />
         <activity android:name=".DetailedViewActivity"/>
         <activity

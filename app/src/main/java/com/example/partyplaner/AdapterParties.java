@@ -39,7 +39,7 @@ public class AdapterParties extends RecyclerView.Adapter<AdapterParties.ViewHold
         holder.textViewPartyLocation.setText(tmp.getLocation());
         holder.textViewPartyDate.setText(tmp.getDatetime().toString());
         holder.textViewPartyDescription.setText(tmp.getDescription());
-        //TODO set image
+        holder.imageView.setBackgroundResource(R.drawable.partyimagebackground);
     }
 
     @Override
