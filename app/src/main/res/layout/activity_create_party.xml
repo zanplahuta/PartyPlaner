@@ -145,6 +145,7 @@
         android:hint="Name your party"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -197,7 +198,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="private"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/black"
+            android:textColorHint="@color/black"
+            android:textColorLink="@color/black" />
 
         <RadioButton
             android:id="@+id/radioPublic"
@@ -230,6 +234,8 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -255,6 +261,7 @@
         android:hint="dd-mm-yyyy"
         android:inputType="date"
         android:minHeight="48dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -313,6 +320,7 @@
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:background="@drawable/profilelinkimage"
+        android:onClick="onClickOpenList"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline16"
